@@ -7,20 +7,125 @@
     <meta name="keywords" content="MrYCDM, YCDM, Telegram, VK, Instagram, Moldova">
     <meta name="author" content="MrYCDM">
     <title>MrYCDM - Information</title>
+    <!-- Подключение CSS -->
+    <style>
+        /* Основные стили */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        blockquote {
+            font-style: italic;
+            color: #555;
+            border-left: 4px solid #333;
+            padding-left: 10px;
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Анимация для заголовка */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        header h1 {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Кнопка для скрытия/показа информации */
+        .toggle-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Information About Me</h1>
     </header>
     <main>
-        <section>
+        <!-- Кнопка для скрытия/показа информации -->
+        <button class="toggle-button" onclick="toggleSections()">Toggle Sections</button>
+
+        <section id="nicknames-section">
             <h2>My Nicknames</h2>
             <ul>
                 <li>MrYCDM</li>
                 <li>YCDM</li>
             </ul>
         </section>
-        <section>
+        <section id="social-section">
             <h2>My Social Networks</h2>
             <ul>
                 <li>
@@ -34,7 +139,7 @@
                 <li><strong>Instagram:</strong> <a href="https://www.instagram.com/mrycdmofficial?igsh=MTNnc2o1MXhzcmNjZg==" target="_blank" rel="noopener noreferrer">mrycdmofficial</a></li>
             </ul>
         </section>
-        <section>
+        <section id="personal-section">
             <h2>Personal Information</h2>
             <ul>
                 <li><strong>Real Name:</strong> *****</li>
@@ -42,7 +147,7 @@
                 <li><strong>Country:</strong> Moldova</li>
             </ul>
         </section>
-        <section>
+        <section id="quote-section">
             <h2>Quote</h2>
             <blockquote>
                 <p>"A true hero is not the one in shining armor and a beautiful pose. A hero is someone who does what needs to be done. They have to get their hands dirty and sometimes shed blood, yet they still do it because it is necessary..."</p>
@@ -52,5 +157,29 @@
     <footer>
         <p>&copy; 2023 MrYCDM. All rights reserved.</p>
     </footer>
+
+    <!-- Подключение JavaScript -->
+    <script>
+        // Функция для скрытия/показа секций
+        function toggleSections() {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                if (section.style.display === 'none') {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+
+        // Анимация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header h1');
+            header.style.opacity = '0';
+            setTimeout(() => {
+                header.style.opacity = '1';
+            }, 500);
+        });
+    </script>
 </body>
 </html>
