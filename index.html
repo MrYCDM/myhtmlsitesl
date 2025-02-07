@@ -7,7 +7,6 @@
     <meta name="keywords" content="MrYCDM, YCDM, Telegram, VK, Instagram, Moldova">
     <meta name="author" content="MrYCDM">
     <title>MrYCDM - Information</title>
-    <!-- Подключение CSS -->
     <style>
         /* Основные стили */
         body {
@@ -108,6 +107,55 @@
         .toggle-button:hover {
             background-color: #0056b3;
         }
+
+        /* Стили для формы комментариев */
+        #comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        #comment-form label {
+            font-weight: bold;
+        }
+
+        #comment-form input,
+        #comment-form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #comment-form button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #comment-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Стили для списка комментариев */
+        #comments-list {
+            margin-top: 20px;
+        }
+
+        .comment {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #007BFF;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .comment strong {
+            color: #007BFF;
+        }
     </style>
 </head>
 <body>
@@ -118,6 +166,55 @@
         <!-- Кнопка для скрытия/показа информации -->
         <button class="toggle-button" onclick="toggleSections()">Toggle Sections</button>
 
+        <!-- Новый раздел "About Me" -->
+        <section id="about-me-section">
+            <h2>About Me</h2>
+            <p>
+                I love programming. My favorite programming languages:
+                <ul>
+                    <li>Lua</li>
+                    <li>JavaScript (JS)</li>
+                    <li>CSS</li>
+                    <li>Python</li>
+                    <li>HTML</li>
+                </ul>
+            </p>
+            <p>
+                My favorite games:
+                <ul>
+                    <li>Grand Theft Auto (all)</li>
+                    <li>Minecraft</li>
+                    <li>Roblox</li>
+                    <li>Rust</li>
+                    <li>CS2</li>
+                </ul>
+            </p>
+            <p>
+                My favorite apps:
+                <ul>
+                    <li>DeepSeek</li>
+                    <li>Telegram</li>
+                </ul>
+            </p>
+            <p>
+                idk what to write next?
+            </p>
+        </section>
+
+        <!-- Раздел комментариев -->
+        <section id="comments-section">
+            <h2>Comments</h2>
+            <form id="comment-form">
+                <label for="comment-name">Name:</label>
+                <input type="text" id="comment-name" name="name" required maxlength="50">
+                <label for="comment-text">Comment:</label>
+                <textarea id="comment-text" name="comment" required maxlength="500"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="comments-list"></div>
+        </section>
+
+        <!-- Остальные разделы -->
         <section id="nicknames-section">
             <h2>My Nicknames</h2>
             <ul>
@@ -158,7 +255,6 @@
         <p>&copy; 2025 MrYCDM. All rights reserved.</p>
     </footer>
 
-    <!-- Подключение JavaScript -->
     <script>
         // Функция для скрытия/показа секций
         function toggleSections() {
@@ -179,6 +275,47 @@
             setTimeout(() => {
                 header.style.opacity = '1';
             }, 500);
+
+            // Обработка формы комментариев
+            const commentForm = document.getElementById('comment-form');
+            const commentsList = document.getElementById('comments-list');
+
+            commentForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                // Получение данных из формы
+                const name = document.getElementById('comment-name').value.trim();
+                const text = document.getElementById('comment-text').value.trim();
+
+                // Валидация данных
+                if (!name || !text) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+
+                // Экранирование HTML-тегов
+                const safeName = escapeHTML(name);
+                const safeText = escapeHTML(text);
+
+                // Создание нового комментария
+                const commentElement = document.createElement('div');
+                commentElement.classList.add('comment');
+                commentElement.innerHTML = `
+                    <strong>${safeName}</strong>
+                    <p>${safeText}</p>
+                `;
+
+                // Добавление комментария в список
+                commentsList.appendChild(commentElement);
+
+                // Очистка формы
+                commentForm.reset();
+            });
+
+            // Функция для экранирования HTML
+            function escapeHTML(str) {
+                return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            }
         });
     </script>
 </body>
