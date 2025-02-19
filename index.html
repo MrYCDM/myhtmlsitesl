@@ -156,22 +156,49 @@
         .comment strong {
             color: #007BFF;
         }
+
+        /* Стили для кнопок изменения языка */
+        .language-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .language-buttons button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .language-buttons button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Information About Me</h1>
+        <h1 id="header-title">Information About Me</h1>
     </header>
     <main>
+        <!-- Кнопки для изменения языка -->
+        <div class="language-buttons">
+            <button onclick="changeLanguage('en')">English</button>
+            <button onclick="changeLanguage('ru')">Русский</button>
+            <button onclick="changeLanguage('ar')">العربية</button>
+        </div>
+
         <!-- Кнопка для скрытия/показа информации -->
         <button class="toggle-button" onclick="toggleSections()">Toggle Sections</button>
 
         <!-- Новый раздел "About Me" -->
         <section id="about-me-section">
-            <h2>About Me</h2>
-            <p>
+            <h2 id="about-me-title">About Me</h2>
+            <p id="about-me-text">
                 I love programming. My favorite programming languages:
-                <ul>
+                <ul id="programming-languages">
                     <li>Lua</li>
                     <li>JavaScript (JS)</li>
                     <li>CSS</li>
@@ -179,9 +206,9 @@
                     <li>HTML</li>
                 </ul>
             </p>
-            <p>
+            <p id="favorite-games-text">
                 My favorite games:
-                <ul>
+                <ul id="favorite-games">
                     <li>Grand Theft Auto (all)</li>
                     <li>Minecraft</li>
                     <li>Roblox</li>
@@ -189,71 +216,71 @@
                     <li>CS2</li>
                 </ul>
             </p>
-            <p>
+            <p id="favorite-apps-text">
                 My favorite apps:
-                <ul>
+                <ul id="favorite-apps">
                     <li>DeepSeek</li>
                     <li>Telegram</li>
                 </ul>
             </p>
-            <p>
+            <p id="idk-text">
                 idk what to write next?
             </p>
         </section>
 
         <!-- Раздел комментариев -->
         <section id="comments-section">
-            <h2>Comments</h2>
+            <h2 id="comments-title">Comments</h2>
             <form id="comment-form">
-                <label for="comment-name">Name:</label>
+                <label for="comment-name" id="comment-name-label">Name:</label>
                 <input type="text" id="comment-name" name="name" required maxlength="50">
-                <label for="comment-text">Comment:</label>
+                <label for="comment-text" id="comment-text-label">Comment:</label>
                 <textarea id="comment-text" name="comment" required maxlength="500"></textarea>
-                <button type="submit">Submit</button>
+                <button type="submit" id="comment-submit-button">Submit</button>
             </form>
             <div id="comments-list"></div>
         </section>
 
         <!-- Остальные разделы -->
         <section id="nicknames-section">
-            <h2>My Nicknames</h2>
-            <ul>
+            <h2 id="nicknames-title">My Nicknames</h2>
+            <ul id="nicknames-list">
                 <li>MrYCDM</li>
                 <li>YCDM</li>
             </ul>
         </section>
         <section id="social-section">
-            <h2>My Social Networks</h2>
-            <ul>
+            <h2 id="social-title">My Social Networks</h2>
+            <ul id="social-list">
                 <li>
-                    <strong>Telegram:</strong>
+                    <strong id="telegram-title">Telegram:</strong>
                     <ul>
                         <li>Main account: <a href="https://t.me/MrYCDM" target="_blank" rel="noopener noreferrer">@MrYCDM</a></li>
                         <li>Manager: <a href="https://t.me/MrYCDMManager" target="_blank" rel="noopener noreferrer">@MrYCDMManager</a></li>
                     </ul>
                 </li>
-                <li><strong>VK:</strong> <a href="https://vk.com/mrycdm" target="_blank" rel="noopener noreferrer">@mrycdm</a></li>
-                <li><strong>Instagram:</strong> <a href="https://www.instagram.com/mrycdmofficial?igsh=MTNnc2o1MXhzcmNjZg==" target="_blank" rel="noopener noreferrer">mrycdmofficial</a></li>
+                <li><strong id="vk-title">VK:</strong> <a href="https://vk.com/mrycdm" target="_blank" rel="noopener noreferrer">@mrycdm</a></li>
+                <li><strong id="instagram-title">Instagram:</strong> <a href="https://www.instagram.com/mrycdmofficial?igsh=MTNnc2o1MXhzcmNjZg==" target="_blank" rel="noopener noreferrer">mrycdmofficial</a></li>
             </ul>
         </section>
         <section id="personal-section">
-    <h2>Personal Information</h2>
-    <ul>
-        <li><strong>Real Name:</strong> *****</li>
-        <li><strong>Age:</strong> ***</li>
-        <li><strong>Country:</strong> UAE (United Arab Emirates)</li>
-        <li><strong>Languages:</strong> Russian, Arabic, English</li> <!-- Добавлено -->
-    </ul>
-</section>
+            <h2 id="personal-title">Personal Information</h2>
+            <ul id="personal-list">
+                <li><strong id="real-name-title">Real Name:</strong> *****</li>
+                <li><strong id="age-title">Age:</strong> ***</li>
+                <li><strong id="country-title">Country:</strong> UAE (United Arab Emirates)</li>
+                <li><strong id="languages-title">Languages:</strong> Russian, Arabic, English</li>
+            </ul>
+        </section>
         <section id="quote-section">
-            <h2>Quote</h2>
+            <h2 id="quote-title">Quote</h2>
             <blockquote>
-                <p>"A true hero is not the one in shining armor and a beautiful pose. A hero is someone who does what needs to be done. They have to get their hands dirty and sometimes shed blood, yet they still do it because it is necessary..."</p>
+                <p id="quote-text">"A true hero is not the one in shining armor and a beautiful pose. A hero is someone who does what needs to be done. They have to get their hands dirty and sometimes shed blood, yet they still do it because it is necessary..."</p>
             </blockquote>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 MrYCDM. All rights reserved.</p>
+        <p id="footer-text">&copy; 2025 MrYCDM. All rights reserved.</p>
     </footer>
 
     <script>
@@ -318,6 +345,111 @@
                 return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
             }
         });
+
+        // Переводы для разных языков
+        const translations = {
+            en: {
+                headerTitle: "Information About Me",
+                aboutMeTitle: "About Me",
+                aboutMeText: "I love programming. My favorite programming languages:",
+                favoriteGamesText: "My favorite games:",
+                favoriteAppsText: "My favorite apps:",
+                idkText: "idk what to write next?",
+                commentsTitle: "Comments",
+                commentNameLabel: "Name:",
+                commentTextLabel: "Comment:",
+                commentSubmitButton: "Submit",
+                nicknamesTitle: "My Nicknames",
+                socialTitle: "My Social Networks",
+                telegramTitle: "Telegram:",
+                vkTitle: "VK:",
+                instagramTitle: "Instagram:",
+                personalTitle: "Personal Information",
+                realNameTitle: "Real Name:",
+                ageTitle: "Age:",
+                countryTitle: "Country:",
+                languagesTitle: "Languages:",
+                quoteTitle: "Quote",
+                quoteText: "\"A true hero is not the one in shining armor and a beautiful pose. A hero is someone who does what needs to be done. They have to get their hands dirty and sometimes shed blood, yet they still do it because it is necessary...\"",
+                footerText: "© 2025 MrYCDM. All rights reserved."
+            },
+            ru: {
+                headerTitle: "Информация обо мне",
+                aboutMeTitle: "Обо мне",
+                aboutMeText: "Я люблю программирование. Мои любимые языки программирования:",
+                favoriteGamesText: "Мои любимые игры:",
+                favoriteAppsText: "Мои любимые приложения:",
+                idkText: "Не знаю, что написать дальше?",
+                commentsTitle: "Комментарии",
+                commentNameLabel: "Имя:",
+                commentTextLabel: "Комментарий:",
+                commentSubmitButton: "Отправить",
+                nicknamesTitle: "Мои никнеймы",
+                socialTitle: "Мои социальные сети",
+                telegramTitle: "Telegram:",
+                vkTitle: "ВКонтакте:",
+                instagramTitle: "Instagram:",
+                personalTitle: "Личная информация",
+                realNameTitle: "Настоящее имя:",
+                ageTitle: "Возраст:",
+                countryTitle: "Страна:",
+                languagesTitle: "Языки:",
+                quoteTitle: "Цитата",
+                quoteText: "\"Настоящий герой — не тот, кто в сияющих доспехах и красивой позе. Герой — это тот, кто делает то, что нужно. Ему приходится пачкать руки и иногда проливать кровь, но он всё равно делает это, потому что это необходимо...\"",
+                footerText: "© 2025 MrYCDM. Все права защищены."
+            },
+            ar: {
+                headerTitle: "معلومات عني",
+                aboutMeTitle: "عني",
+                aboutMeText: "أنا أحب البرمجة. لغات البرمجة المفضلة لدي:",
+                favoriteGamesText: "ألعابي المفضلة:",
+                favoriteAppsText: "تطبيقاتي المفضلة:",
+                idkText: "لا أعرف ماذا أكتب بعد؟",
+                commentsTitle: "تعليقات",
+                commentNameLabel: "الاسم:",
+                commentTextLabel: "تعليق:",
+                commentSubmitButton: "إرسال",
+                nicknamesTitle: "ألقابي",
+                socialTitle: "شبكاتي الاجتماعية",
+                telegramTitle: "Telegram:",
+                vkTitle: "VK:",
+                instagramTitle: "Instagram:",
+                personalTitle: "معلومات شخصية",
+                realNameTitle: "الاسم الحقيقي:",
+                ageTitle: "العمر:",
+                countryTitle: "البلد:",
+                languagesTitle: "اللغات:",
+                quoteTitle: "اقتباس",
+                quoteText: "\"البطل الحقيقي ليس الذي يرتدي درعًا لامعًا ويقف في وضعية جميلة. البطل هو الشخص الذي يفعل ما يجب فعله. عليه أن يتسخ يديه وأحيانًا يسفك الدماء، ومع ذلك لا يزال يفعل ذلك لأنه ضروري...\"",
+                footerText: "© 2025 MrYCDM. جميع الحقوق محفوظة."
+            }
+        };
+
+        // Функция для изменения языка
+        function changeLanguage(language) {
+            const translation = translations[language];
+            document.getElementById('header-title').textContent = translation.headerTitle;
+            document.getElementById('about-me-title').textContent = translation.aboutMeTitle;
+            document.getElementById('about-me-text').textContent = translation.aboutMeText;
+            document.getElementById('favorite-games-text').textContent = translation.favoriteGamesText;
+            document.getElementById('favorite-apps-text').textContent = translation.favoriteAppsText;
+            document.getElementById('idk-text').textContent = translation.idkText;
+            document.getElementById('comments-title').textContent = translation.commentsTitle;
+            document.getElementById('comment-name-label').textContent = translation.commentNameLabel;
+            document.getElementById('comment-text-label').textContent = translation.commentTextLabel;
+            document.getElementById('comment-submit-button').textContent = translation.commentSubmitButton;
+            document.getElementById('nicknames-title').textContent = translation.nicknamesTitle;
+            document.getElementById('social-title').textContent = translation.socialTitle;
+            document.getElementById('telegram-title').textContent = translation.telegramTitle;
+            document.getElementById('vk-title').textContent = translation.vkTitle;
+            document.getElementById('instagram-title').textContent = translation.instagramTitle;
+            document.getElementById('personal-title').textContent = translation.personalTitle;
+            document.getElementById('real-name-title').textContent = translation.realNameTitle;
+            document.getElementById('age-title').textContent = translation.ageTitle;
+            document.getElementById('country-title').textContent = translation.countryTitle;
+            document.getElementById('languages-title').textContent = translation.languagesTitle;
+            document.getElementById('quote-title').textContent = translation.quoteTitle;
+            document.getElementById('quote-text').textContent = translation.quoteText;
+            document.getElementById('footer-text').textContent = translation.footerText;
+        }
     </script>
-</body>
-</html>
