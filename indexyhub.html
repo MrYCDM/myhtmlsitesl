@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Information about MrYCDM: nicknames, social networks, quote, and contact details.">
-    <meta name="keywords" content="MrYCDM, YCDM, Telegram, VK, Instagram, Moldova">
+    <meta name="description" content="Информация о MrYCDM: никнеймы, социальные сети, цитата и контактные данные.">
+    <meta name="keywords" content="MrYCDM, YCDM, Telegram, VK, Instagram, Молдова">
     <meta name="author" content="MrYCDM">
-    <title>MrYCDM - Information</title>
+    <title>MrYCDM - Информация</title>
     <style>
         /* Основные стили */
         body {
@@ -191,45 +191,45 @@
 </head>
 <body>
     <header>
-        <h1>Information About Me</h1>
+        <h1>Информация обо мне</h1>
     </header>
     <main>
         <!-- Форма регистрации -->
         <section id="register-form">
-            <h2>Registration</h2>
+            <h2>Регистрация</h2>
             <form class="auth-form">
-                <input type="text" id="reg-username" placeholder="Username" required>
-                <input type="password" id="reg-password" placeholder="Password" required>
-                <button type="button" onclick="register()">Register</button>
+                <input type="text" id="reg-username" placeholder="Имя пользователя" required>
+                <input type="password" id="reg-password" placeholder="Пароль" required>
+                <button type="button" onclick="register()">Зарегистрироваться</button>
             </form>
-            <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            <p>Уже есть аккаунт? <a href="#" onclick="showLogin()">Войти</a></p>
         </section>
 
         <!-- Форма входа -->
         <section id="login-form" class="hidden">
-            <h2>Login</h2>
+            <h2>Вход</h2>
             <form class="auth-form">
-                <input type="text" id="login-username" placeholder="Username" required>
-                <input type="password" id="login-password" placeholder="Password" required>
-                <button type="button" onclick="login()">Login</button>
+                <input type="text" id="login-username" placeholder="Имя пользователя" required>
+                <input type="password" id="login-password" placeholder="Пароль" required>
+                <button type="button" onclick="login()">Войти</button>
             </form>
-            <p>Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+            <p>Нет аккаунта? <a href="#" onclick="showRegister()">Зарегистрироваться</a></p>
         </section>
 
         <!-- Весь контент сайта (скрыт до входа) -->
         <div id="content-container" class="hidden">
             <!-- Панель администратора -->
             <section id="admin-panel" class="hidden">
-                <h2>Admin Panel</h2>
-                <p>Welcome, <span id="admin-username"></span>!</p>
-                <button onclick="logout()">Logout</button>
+                <h2>Панель администратора</h2>
+                <p>Добро пожаловать, <span id="admin-username"></span>!</p>
+                <button onclick="logout()">Выйти</button>
             </section>
 
-            <!-- Новый раздел "About Me" -->
+            <!-- Новый раздел "Обо мне" -->
             <section id="about-me-section">
-                <h2>About Me</h2>
+                <h2>Обо мне</h2>
                 <p>
-                    I love programming. My favorite programming languages:
+                    Я люблю программирование. Мои любимые языки программирования:
                     <ul>
                         <li>Lua</li>
                         <li>JavaScript (JS)</li>
@@ -239,9 +239,9 @@
                     </ul>
                 </p>
                 <p>
-                    My favorite games:
+                    Мои любимые игры:
                     <ul>
-                        <li>Grand Theft Auto (all)</li>
+                        <li>Grand Theft Auto (все части)</li>
                         <li>Minecraft</li>
                         <li>Roblox</li>
                         <li>Rust</li>
@@ -249,46 +249,46 @@
                     </ul>
                 </p>
                 <p>
-                    My favorite apps:
+                    Мои любимые приложения:
                     <ul>
                         <li>DeepSeek</li>
                         <li>Telegram</li>
                     </ul>
                 </p>
                 <p>
-                    idk what to write next?
+                    Не знаю, что написать дальше?
                 </p>
             </section>
 
             <!-- Раздел комментариев -->
             <section id="comments-section">
-                <h2>Comments</h2>
+                <h2>Комментарии</h2>
                 <form id="comment-form">
-                    <label for="comment-name">Name:</label>
+                    <label for="comment-name">Имя:</label>
                     <input type="text" id="comment-name" name="name" required maxlength="50">
-                    <label for="comment-text">Comment:</label>
+                    <label for="comment-text">Комментарий:</label>
                     <textarea id="comment-text" name="comment" required maxlength="500"></textarea>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Отправить</button>
                 </form>
                 <div id="comments-list"></div>
             </section>
 
             <!-- Остальные разделы -->
             <section id="nicknames-section">
-                <h2>My Nicknames</h2>
+                <h2>Мои никнеймы</h2>
                 <ul>
                     <li>MrYCDM</li>
                     <li>YCDM</li>
                 </ul>
             </section>
             <section id="social-section">
-                <h2>My Social Networks</h2>
+                <h2>Мои социальные сети</h2>
                 <ul>
                     <li>
                         <strong>Telegram:</strong>
                         <ul>
-                            <li>Main account: <a href="https://t.me/MrYCDM" target="_blank" rel="noopener noreferrer">@MrYCDM</a></li>
-                            <li>Manager: <a href="https://t.me/MrYCDMManager" target="_blank" rel="noopener noreferrer">@MrYCDMManager</a></li>
+                            <li>Основной аккаунт: <a href="https://t.me/MrYCDM" target="_blank" rel="noopener noreferrer">@MrYCDM</a></li>
+                            <li>Менеджер: <a href="https://t.me/MrYCDMManager" target="_blank" rel="noopener noreferrer">@MrYCDMManager</a></li>
                         </ul>
                     </li>
                     <li><strong>VK:</strong> <a href="https://vk.com/mrycdm" target="_blank" rel="noopener noreferrer">@mrycdm</a></li>
@@ -296,24 +296,24 @@
                 </ul>
             </section>
             <section id="personal-section">
-                <h2>Personal Information</h2>
+                <h2>Личная информация</h2>
                 <ul>
-                    <li><strong>Real Name:</strong> *****</li>
-                    <li><strong>Age:</strong> ***</li>
-                    <li><strong>Country:</strong> UAE (United Arab Emirates)</li>
-                    <li><strong>Languages:</strong> Russian, Arabic, English</li>
+                    <li><strong>Настоящее имя:</strong> *****</li>
+                    <li><strong>Возраст:</strong> ***</li>
+                    <li><strong>Страна:</strong> ОАЭ (Объединенные Арабские Эмираты)</li>
+                    <li><strong>Языки:</strong> Русский, Арабский, Английский</li>
                 </ul>
             </section>
             <section id="quote-section">
-                <h2>Quote</h2>
+                <h2>Цитата</h2>
                 <blockquote>
-                    <p>"A true hero is not the one in shining armor and a beautiful pose. A hero is someone who does what needs to be done. They have to get their hands dirty and sometimes shed blood, yet they still do it because it is necessary..."</p>
+                    <p>"Настоящий герой — это не тот, кто в сияющих доспехах и красивой позе. Герой — это тот, кто делает то, что нужно. Ему приходится пачкать руки и иногда проливать кровь, но он всё равно делает это, потому что это необходимо..."</p>
                 </blockquote>
             </section>
         </div>
     </main>
     <footer>
-        <p>&copy; 2025 MrYCDM. All rights reserved.</p>
+        <p>&copy; 2025 MrYCDM. Все права защищены.</p>
     </footer>
 
     <script>
@@ -343,10 +343,10 @@
 
             if (username && password) {
                 users.push({ username, password, role: "user" }); // Обычные пользователи
-                alert('Registration successful!');
+                alert('Регистрация успешна!');
                 showLogin();
             } else {
-                alert('Please fill in all fields.');
+                alert('Пожалуйста, заполните все поля.');
             }
         }
 
@@ -368,7 +368,7 @@
                     document.getElementById('admin-username').textContent = username;
                 }
             } else {
-                alert('Invalid username or password.');
+                alert('Неверное имя пользователя или пароль.');
             }
         }
 
