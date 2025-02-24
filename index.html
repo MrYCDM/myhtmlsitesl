@@ -8,19 +8,29 @@
     <meta name="author" content="MrYCDM">
     <title>MrYCDM - Information</title>
     <style>
-        /* Основные стили */
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #333;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --white: #fff;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --font-family: Arial, sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: var(--font-family);
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
 
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: var(--secondary-color);
+            color: var(--white);
             padding: 20px;
             text-align: center;
         }
@@ -31,15 +41,16 @@
 
         section {
             margin-bottom: 20px;
-            background-color: #fff;
+            background-color: var(--white);
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: opacity 0.3s ease;
         }
 
         h2 {
-            color: #333;
-            border-bottom: 2px solid #333;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 10px;
         }
 
@@ -53,7 +64,7 @@
         }
 
         a {
-            color: #007BFF;
+            color: var(--primary-color);
             text-decoration: none;
         }
 
@@ -64,7 +75,7 @@
         blockquote {
             font-style: italic;
             color: #555;
-            border-left: 4px solid #333;
+            border-left: 4px solid var(--secondary-color);
             padding-left: 10px;
             margin: 0;
         }
@@ -72,43 +83,28 @@
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #333;
-            color: #fff;
+            background-color: var(--secondary-color);
+            color: var(--white);
             position: fixed;
             width: 100%;
             bottom: 0;
         }
 
-        /* Анимация для заголовка */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        header h1 {
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        /* Кнопка для скрытия/показа информации */
         .toggle-button {
-            background-color: #007BFF;
-            color: #fff;
+            background-color: var(--primary-color);
+            color: var(--white);
             border: none;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: var(--border-radius);
             cursor: pointer;
             margin-bottom: 20px;
+            transition: background-color 0.3s ease;
         }
 
         .toggle-button:hover {
             background-color: #0056b3;
         }
 
-        /* Стили для формы комментариев */
         #comment-form {
             display: flex;
             flex-direction: column;
@@ -124,23 +120,23 @@
         #comment-form textarea {
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: var(--border-radius);
         }
 
         #comment-form button {
-            background-color: #007BFF;
-            color: #fff;
+            background-color: var(--primary-color);
+            color: var(--white);
             border: none;
             padding: 10px;
-            border-radius: 5px;
+            border-radius: var(--border-radius);
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         #comment-form button:hover {
             background-color: #0056b3;
         }
 
-        /* Стили для списка комментариев */
         #comments-list {
             margin-top: 20px;
         }
@@ -148,52 +144,66 @@
         .comment {
             background-color: #f9f9f9;
             padding: 10px;
-            border-left: 4px solid #007BFF;
+            border-left: 4px solid var(--primary-color);
             margin-bottom: 10px;
-            border-radius: 5px;
+            border-radius: var(--border-radius);
         }
 
         .comment strong {
-            color: #007BFF;
+            color: var(--primary-color);
         }
 
-        /* Стили для кнопок изменения языка */
         .language-buttons {
             text-align: center;
             margin-bottom: 20px;
         }
 
         .language-buttons button {
-            background-color: #007BFF;
-            color: #fff;
+            background-color: var(--primary-color);
+            color: var(--white);
             border: none;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: var(--border-radius);
             cursor: pointer;
             margin: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .language-buttons button:hover {
             background-color: #0056b3;
         }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1 id="header-title">Information About Me</h1>
+        <h1 id="header-title" class="fade-in">Information About Me</h1>
     </header>
     <main>
-        <!-- Кнопки для изменения языка -->
         <div class="language-buttons">
             <button onclick="changeLanguage('en')">English</button>
             <button onclick="changeLanguage('ru')">Русский</button>
             <button onclick="changeLanguage('ar')">العربية</button>
         </div>
 
-        <!-- Кнопка для скрытия/показа информации -->
         <button class="toggle-button" onclick="toggleSections()">Toggle Sections</button>
 
-        <!-- Новый раздел "About Me" -->
         <section id="about-me-section">
             <h2 id="about-me-title">About Me</h2>
             <p id="about-me-text">
@@ -228,7 +238,6 @@
             </p>
         </section>
 
-        <!-- Раздел комментариев -->
         <section id="comments-section">
             <h2 id="comments-title">Comments</h2>
             <form id="comment-form">
@@ -241,7 +250,6 @@
             <div id="comments-list"></div>
         </section>
 
-        <!-- Остальные разделы -->
         <section id="nicknames-section">
             <h2 id="nicknames-title">My Nicknames</h2>
             <ul id="nicknames-list">
@@ -288,63 +296,48 @@
         function toggleSections() {
             const sections = document.querySelectorAll('section');
             sections.forEach(section => {
-                if (section.style.display === 'none') {
-                    section.style.display = 'block';
-                } else {
-                    section.style.display = 'none';
-                }
+                section.classList.toggle('hidden');
             });
         }
 
-        // Анимация при загрузке страницы
-        document.addEventListener('DOMContentLoaded', () => {
-            const header = document.querySelector('header h1');
-            header.style.opacity = '0';
-            setTimeout(() => {
-                header.style.opacity = '1';
-            }, 500);
+        // Обработка формы комментариев
+        const commentForm = document.getElementById('comment-form');
+        const commentsList = document.getElementById('comments-list');
 
-            // Обработка формы комментариев
-            const commentForm = document.getElementById('comment-form');
-            const commentsList = document.getElementById('comments-list');
+        commentForm.addEventListener('submit', (event) => {
+            event.preventDefault();
 
-            commentForm.addEventListener('submit', (event) => {
-                event.preventDefault();
+            const name = document.getElementById('comment-name').value.trim();
+            const text = document.getElementById('comment-text').value.trim();
 
-                // Получение данных из формы
-                const name = document.getElementById('comment-name').value.trim();
-                const text = document.getElementById('comment-text').value.trim();
-
-                // Валидация данных
-                if (!name || !text) {
-                    alert('Please fill in all fields.');
-                    return;
-                }
-
-                // Экранирование HTML-тегов
-                const safeName = escapeHTML(name);
-                const safeText = escapeHTML(text);
-
-                // Создание нового комментария
-                const commentElement = document.createElement('div');
-                commentElement.classList.add('comment');
-                commentElement.innerHTML = `
-                    <strong>${safeName}</strong>
-                    <p>${safeText}</p>
-                `;
-
-                // Добавление комментария в список
-                commentsList.appendChild(commentElement);
-
-                // Очистка формы
-                commentForm.reset();
-            });
-
-            // Функция для экранирования HTML
-            function escapeHTML(str) {
-                return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            if (!name || !text) {
+                alert('Please fill in all fields.');
+                return;
             }
+
+            if (!/^[a-zA-Z0-9\s]{1,50}$/.test(name)) {
+                alert('Name must be alphanumeric and up to 50 characters.');
+                return;
+            }
+
+            const safeName = escapeHTML(name);
+            const safeText = escapeHTML(text);
+
+            const commentElement = document.createElement('div');
+            commentElement.classList.add('comment');
+            commentElement.innerHTML = `
+                <strong>${safeName}</strong>
+                <p>${safeText}</p>
+            `;
+
+            commentsList.appendChild(commentElement);
+            commentForm.reset();
         });
+
+        // Функция для экранирования HTML
+        function escapeHTML(str) {
+            return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
 
         // Переводы для разных языков
         const translations = {
@@ -428,29 +421,12 @@
         // Функция для изменения языка
         function changeLanguage(language) {
             const translation = translations[language];
-            document.getElementById('header-title').textContent = translation.headerTitle;
-            document.getElementById('about-me-title').textContent = translation.aboutMeTitle;
-            document.getElementById('about-me-text').textContent = translation.aboutMeText;
-            document.getElementById('favorite-games-text').textContent = translation.favoriteGamesText;
-            document.getElementById('favorite-apps-text').textContent = translation.favoriteAppsText;
-            document.getElementById('idk-text').textContent = translation.idkText;
-            document.getElementById('comments-title').textContent = translation.commentsTitle;
-            document.getElementById('comment-name-label').textContent = translation.commentNameLabel;
-            document.getElementById('comment-text-label').textContent = translation.commentTextLabel;
-            document.getElementById('comment-submit-button').textContent = translation.commentSubmitButton;
-            document.getElementById('nicknames-title').textContent = translation.nicknamesTitle;
-            document.getElementById('social-title').textContent = translation.socialTitle;
-            document.getElementById('telegram-title').textContent = translation.telegramTitle;
-            document.getElementById('vk-title').textContent = translation.vkTitle;
-            document.getElementById('instagram-title').textContent = translation.instagramTitle;
-            document.getElementById('personal-title').textContent = translation.personalTitle;
-            document.getElementById('real-name-title').textContent = translation.realNameTitle;
-            document.getElementById('age-title').textContent = translation.ageTitle;
-            document.getElementById('country-title').textContent = translation.countryTitle;
-            document.getElementById('languages-title').textContent = translation.languagesTitle;
-            document.getElementById('quote-title').textContent = translation.quoteTitle;
-            document.getElementById('quote-text').textContent = translation.quoteText;
-            document.getElementById('footer-text').textContent = translation.footerText;
+            Object.keys(translation).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translation[key];
+                }
+            });
         }
     </script>
 </body>
