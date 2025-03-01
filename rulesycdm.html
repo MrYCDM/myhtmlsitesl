@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила чата</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #444;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .language-switcher {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .language-switcher button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .language-switcher button:hover {
+            background: #0056b3;
+        }
+        .rule-section {
+            margin-bottom: 30px;
+        }
+        .rule-section h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .rule-section h3 {
+            margin-top: 20px;
+        }
+        .punishment {
+            color: #d9534f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-switcher">
+            <button onclick="switchLanguage('ru')">Русский</button>
+            <button onclick="switchLanguage('en')">English</button>
+        </div>
+        <div id="content">
+            <!-- Russian content -->
+            <div id="ru-content">
+                <h1>📜 Правила чата</h1>
+                <div class="rule-section">
+                    <h2>1. Условия действия правил чата</h2>
+                    <p>1.1. Входя в чат, пользователи обязаны строго придерживаться правил.</p>
+                    <p><span class="punishment">Наказание за нарушение:</span> `tmute 1m` 🕒</p>
+                    <p>1.2. Отсутствие знания правил не является оправданием для нарушений, поэтому настоятельно рекомендуется ознакомиться с ними перед началом общения.</p>
+                </div>
+                <!-- Add more sections here -->
+            </div>
+            <!-- English content -->
+            <div id="en-content" style="display: none;">
+                <h1>📜 Chat Rules</h1>
+                <div class="rule-section">
+                    <h2>1. Terms of Chat Rules</h2>
+                    <p>1.1. Upon entering the chat, users must strictly adhere to the rules.</p>
+                    <p><span class="punishment">Punishment for violation:</span> `tmute 1m` 🕒</p>
+                    <p>1.2. Ignorance of the rules is not an excuse for violations, so it is highly recommended to familiarize yourself with them before starting communication.</p>
+                </div>
+                <!-- Add more sections here -->
+            </div>
+        </div>
+    </div>
+    <script>
+        function switchLanguage(lang) {
+            if (lang === 'ru') {
+                document.getElementById('ru-content').style.display = 'block';
+                document.getElementById('en-content').style.display = 'none';
+            } else if (lang === 'en') {
+                document.getElementById('ru-content').style.display = 'none';
+                document.getElementById('en-content').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
